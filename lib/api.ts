@@ -20,10 +20,11 @@ export function getCustomers(): Customer[] {
   return customers;
 }
 
-export function saveCustomer(customer: Customer): void {
-  localStorage.setItem(customer.id, JSON.stringify({name: customer.name, email: customer.email}));
+export async function saveCustomer(customer: Customer): Promise<void> {
+  localStorage.setItem(customer.id, JSON.stringify({...}));
 }
 
-export function deleteCustomer(customerId: string): void {
+
+export async function deleteCustomer(customerId: string): Promise<void> {
   localStorage.removeItem(customerId);
 }
